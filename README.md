@@ -1,18 +1,43 @@
-## Getting Started
+Desafio de implementação da Classe Iphone com 3 interfaces, proposto pelo Bootcamp de Backend com Java oferecido pelo Santander em parceria com a DIO.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Abaixo é possível observar o Diagrama de Classe UML do desafio.
 
-## Folder Structure
+```mermaid
+classDiagram
+    class IPod {
+        +play()
+        +pause()
+        +selecionarMusica(String musica)
+    }
 
-The workspace contains two folders by default, where:
+    class Phone {
+        +ligar(int numero)
+        +atender()
+        +iniciarCorreioVoz()
+    }
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    class Safari {
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    class iPhone {
+        -int numero
+        -boolean ligado
+        -boolean tocando
+        -boolean chamando
+        +getNumero()
+        +setNumero()
+        +getLigado()
+        +setLigado()
+        +getTocando()
+        +setTocando()
+        +getChamando()
+        +setChamando()
+    }
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    iPhone --> IPod
+    iPhone --> Phone
+    iPhone --> Safari
+```
