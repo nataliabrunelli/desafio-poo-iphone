@@ -5,18 +5,21 @@ Abaixo é possível observar o Diagrama de Classe UML do desafio.
 ```mermaid
 classDiagram
     class IPod {
+        <<interface>>
         +play()
         +pause()
         +selecionarMusica(String musica)
     }
 
     class Phone {
+        <<interface>>
         +ligar(int numero)
         +atender()
         +iniciarCorreioVoz()
     }
 
     class Safari {
+        <<interface>>
         +exibirPagina(String url)
         +adicionarNovaAba()
         +atualizarPagina()
@@ -37,7 +40,9 @@ classDiagram
         +setChamando()
     }
 
-    iPhone --> IPod
-    iPhone --> Phone
-    iPhone --> Safari
+    iPhone ..|> IPod
+    iPhone ..|> Phone
+    iPhone ..|> Safari
 ```
+
+Referência para a elaboração do diagrama UML utilizando a ferramenta [Mermaid](https://mermaid.js.org/syntax/classDiagram.html).
